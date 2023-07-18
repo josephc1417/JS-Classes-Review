@@ -8,23 +8,31 @@
 <body>
     <h2 id="title">Classes:HTML List Binding</h2>
     
-    <ul id="myList">
+
+    <!--parent-->
+    <ul id="myList"> 
         <!--This is going to be filled by JS-->
+        
+       
+        <!--children-->
+        <li>tim</li>
+        <li>john</li>
+        <li>bob</li>
+        
+    </ul>
     
     
-    <!-- Using Script Tag for basic DOM Manipulation -->
-    <script type="text/javascript">
-        const myList = document.getElementById("myList");
-
-    </script>
-
-
-
-
 
 
 
     <!-- linking listBinding.js file-->
     <script src="/JS/listBinding.js"></script>
+    
+    
+    <!-- Using Script Tag for basic DOM Manipulation -->
+    <script>
+        const myList = document.getElementById("myList");
+        const listBinding = new ListBinding(myList);
+    </script>
 </body>
 </html> 
