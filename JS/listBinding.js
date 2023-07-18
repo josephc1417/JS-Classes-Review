@@ -11,6 +11,11 @@
 
      //This instance method will update the DOM with the items Contained in //*>> this.textList[] <<*/
      updates() {
+      //* Remove all existing <li> element tags first from parent Element(this.listElement)
+      while (this.listElement.firstChild){
+           this.listElement.removeChild(this.listElement.firstChild);
+      }
+
 
      }
  }
