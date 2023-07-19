@@ -6,9 +6,7 @@
       
       //this instance property (listElement) refers to the physical HTML ELEMENT
       this.listElement = element;
-      this.textList = [
-         "hi","bye","Go"
-      ];
+      this.textList = [];
     }
 
     // creating a static method (helper method )
@@ -24,7 +22,7 @@
 
 
     //This instance method will update the DOM with the items Contained in //*>> this.textList[] <<*/
-     updates() {
+     update() {
       //* Remove all existing <li> element tags first from parent Element(this.listElement)
       while (this.listElement.firstChild){
            this.listElement.removeChild(this.listElement.firstChild);
@@ -36,4 +34,23 @@
          this.listElement.appendChild(ListBinding.createListElement(text));
      }
    }
+
+   
+   //when the add method is called the user will add text as an argument, that will then 
+   // be passed into the array 
+   // the array will then be updated 
+      add (text) {
+         this.textList.push(text);
+         this.update();
+      }
+
+      //using splice, we can remove an item starting at a specific index within the array
+      //take in an index value as an argument 
+      remove (index){
+         //splice = .splice(index,#of elements to be removed at that index)
+         this.textList.splice(index, 1);
+         this.update();
+      }
+
+
 }
